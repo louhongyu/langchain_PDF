@@ -3,6 +3,7 @@ import os
 
 #引入OpenAI作为主要的大模型服务,注意这里的OpenAI是大写的
 from langchain.llms import OpenAI
+from langchain.embeddings import OpenAIEmbeddings
 
 #导入stremlit来做UI和web的便捷展示
 import streamlit as st
@@ -25,6 +26,8 @@ os.environ['OPENAI_API_KEY']='sk-QC0rmtNrdr1GsfpmvzVLT3BlbkFJA1GiYrG9zvk0U8dKwz6
 
 #创建OpenAI实例
 llm=OpenAI(temperature=0.9)
+
+embeddings = OpenAIEmbeddings()
 
 #用PyPDFLoader上传PDF文件
 loader=PyPDFLoader('数字疗法行业报告.pdf')
